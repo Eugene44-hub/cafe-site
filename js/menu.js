@@ -44,7 +44,7 @@ searchMenu = searchMenu.map((item, index) => ({...item, id: index })) //added an
 
 //generating markup
 const generateMarkupCard = (menu) => {
-   return `
+    return `
         <div class="col-md-6 col-lg-3">
             <div class="card item" >
                 <div class="card-body text-center"> 
@@ -68,7 +68,7 @@ const generateMarkupCard = (menu) => {
 //rendering results
 const render = (menu) => {
     dishes.innerHTML = '';
-    menu.map(dish => dishes.insertAdjacentHTML('beforeend',  generateMarkupCard(dish)))
+    menu.map(dish => dishes.insertAdjacentHTML('beforeend', generateMarkupCard(dish)))
 }
 
 //default
@@ -79,16 +79,19 @@ searchFoods.addEventListener('input', () => {
     const input = (searchFoods.value).toLowerCase();
     const searchFood = searchMenu.filter(menu => menu.food.toLowerCase().includes(input));
     Footer.style.display = 'block';
-    if(searchFood.length === 0){
+    if (searchFood.length === 0) {
         Footer.style.display = 'none';
         return dishes.innerHTML = `
             <h1 class='m-auto text-center'>No Results</h1>
             `
-    }else if(input === ''){
+    } else if (input === '') {
         render(searchMenu);
-    }else{
+    } else {
         render(searchFood);
     }
+    const food = parent.querySelector('.title');
+
+
 })
 
 
@@ -98,9 +101,9 @@ const orderBtns = document.querySelectorAll('.btnOrd');
 const bill = document.querySelector('.bill');
 const billText = document.querySelector('#bill');
 
-const prices = [];
-const foods = [];
-
+// const prices = [];
+// const foods = [];
+let userOrders = []
 orderBtns.forEach((order) => {
     order.addEventListener('click', e => {
         e.preventDefault();
@@ -109,38 +112,39 @@ orderBtns.forEach((order) => {
         const food = parent.querySelector('.title');
         const priceOrg = parent.querySelector('.price').textContent;
         const price = +(priceOrg.replace('$', ''))
-        // console.log(parent);
+            // console.log(parent);
 
-        if(qtty.value == ''){
+        if (qtty.value == '') {
             alert("Please enter the qtty");
-        }else{
+        } else {
             // console.log((qtty.value) * price);
-             order.textContent = 'Ordered!';
+            order.textContent = 'Ordered!';
 
-             prices.push((qtty.value) * price)
-             foods.push(food.textContent)
-             // console.log(foods)
+            userOrders.push({ price: ((qtty.value) * price), name: (food.textContent) })
+            generateMarkupOrders();
 
-             parent.classList.add('selected');
-             qtty.value = '';
+            parent.classList.add('selected');
+            qtty.value = '';
         }
 
         // const fp = +order.dataset.fp;
         // const fn = order.dataset.fn;
 
-       
+
     })
 })
 
 bill.addEventListener('click', () => {
-    const reducer = (pv, cv) => pv + cv;
-
-    if(prices.length === 0){
+    const prices = userOrders.map(item => item.price)
+    if (userOrders.length === 0) {
         billText.textContent = "Please order something!"
-    }else{
-         billText.textContent = '$' + prices.reduce(reducer);
+
+    } else {
+        billText.textContent = '$' + prices.reduce((totalPrice, price) => totalPrice + price, 0)
+        console.log(prices)
+
     }
-   
+
 })
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@___CART___@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -148,25 +152,59 @@ const orders = document.querySelector('#Orders');
 const ordersList = document.querySelector('.orders-list');
 const cancel = document.querySelector('.cancel');
 
-const generateMarkupOrders = (name, price) => {
-    const markup = `
+const generateMarkupOrders = () => {
+
+    ordersList.innerHTML = userOrders.map(item =>
+        `
         <li class="list-group-item d-flex justify-content-between align-items-start mb-2  border-left">
           <div class="ms-3 me-auto">
-             <h4>${name}</h4>
-                <span class="text-center">$${price}</span>
+             <h4>${item.name}</h4>
+                <span class="text-center">$${item.price}</span>
           </div>
           <button class="btn btn-secondary border-0 bg-orange rounded text-light cancel">
               Cancel
           </button>
       </li>
-    `;
-    ordersList.insertAdjacentHTML('afterbegin', markup);
+    `
+    )
+
+
+
 }
 
 
 orders.addEventListener('click', (e) => {
-    console.log(foods);
-   for(let i in prices){
-      generateMarkupOrders(foods[i], prices[i]);
-   }
+    console.log(userOrders);
+
+
+})
+
+
+orders.addEventListener('click', e => {
+    if (e.target.classList.contains('cancel')) {
+        console.log(e.target.parentElement.children[0].children[0].textContent)
+
+        for (let i = 0; i < userOrders.length; i++) {
+            if (e.target.parentElement.children[0].children[0].textContent === userOrders[i].name) {
+                e.target.parentElement.remove()
+                userOrders.splice([i], 1);
+
+            }
+        }
+
+
+
+    }
+    if (userOrders.length === 0) {
+        for (let i = 0; i < orderBtns.length; i++) orderBtns[i].textContent = 'Order Now!'
+    } else {
+        const food = document.querySelectorAll('.title');
+        for (let j = 0; j < food.length; j++) {
+
+            if (food[j].textContent === e.target.parentElement.children[0].children[0].textContent) {
+                orderBtns[j].textContent = 'Order Now!'
+            }
+
+        }
+    }
 })
