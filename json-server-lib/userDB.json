@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "name": "Eugene Ishado",
+      "password": "euknjejknefj",
+      "location": "Nigeria",
+      "email": "eugeneishado44@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Rupali Rachna",
+      "password": "rups",
+      "location": "India",
+      "email": "rups@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "eugene",
+      "password": "euknjejknefj",
+      "location": "Nigeria",
+      "email": "dammy@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Ekene",
+      "password": "eugenepyo",
+      "location": "Nigeria",
+      "email": "nics@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Wisdom",
+      "password": "whuiwhdi",
+      "location": "Afghanistan",
+      "email": "wis@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "Ebuka",
+      "password": "kefnkenkfneknf",
+      "location": "Afghanistan",
+      "email": "ebuks@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "Mesach",
+      "password": "kfneknfknef",
+      "location": "Afghanistan",
+      "email": "mes@gmail.com",
+      "id": 7
+    }
+  ]
+}

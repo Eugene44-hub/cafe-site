@@ -5,11 +5,14 @@
     padding: 0;
     font-family: 'Raleway', sans-serif;
 }
-.bg-orange{
-    background-color: #ff5500;;
+
+.bg-orange {
+    background-color: #ff5500;
 }
-.text-orange{
-    color: #ff5500;;
+
+.text-orange {
+    color: #ff5500;
+    ;
 }
 
 
@@ -66,8 +69,7 @@
 
 /*menu*/
 
-.nl{
-
+.nl {
     color: white;
     font-weight: bold;
     margin-right: 10px;
@@ -75,23 +77,25 @@
 }
 
 .nl:hover,
-.active
-{
+.active {
     border-bottom: 4px solid #ff5500;
     color: #ff5500;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-.menu{
-    background-color: #4d2600; 
 
+.menu {
+    background-color: #4d2600;
     padding: 6rem;
 }
-.menu-header{
+
+.menu-header {
     display: flex;
 }
-.button{
+
+.button {
     background-color: #ff5500;
     padding: 15px 30px;
     border-radius: 30px;
@@ -100,15 +104,18 @@
     font-size: 20px;
     margin: auto;
 }
-.card{
+
+.card {
     text-align: center;
 }
-.cImg{
+
+.cImg {
     height: 180px;
     width: 180px;
-    margin: 10px auto;  
+    margin: 10px auto;
 }
-.price{
+
+.price {
     background-color: #ff5500;
     border-radius: 30px;
     padding: 5px;
@@ -118,45 +125,48 @@
     margin: auto 40%;
     color: white;
 }
-.card-title{
+
+.card-title {
     font-size: 25px;
     margin: 10px;
-    font-weight: bold;  
-
+    font-weight: bold;
 }
 
-.btns{
+.btns {
     margin: auto 45%;
     display: flex;
 }
 
-
-.btnMovs{
-
+.btnMovs {
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     margin: 10px;
 }
-.btnMovs img{
+
+.btnMovs img {
     height: 50px;
     width: 50px;
 }
-.btn-left{
+
+.btn-left {
     margin-left: 10px;
 }
-.btnOrd{
+
+.btnOrd {
     border: none;
     background-color: inherit;
 }
-.btnOrd{
-    color:  #ff5500;
+
+.btnOrd {
+    color: #ff5500;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 3px solid  #ff5500;  
+    border-bottom: 3px solid #ff5500;
 }
-.btnOrd:hover{
-    border-bottom: 1px solid  #ff5500
+
+.btnOrd:hover {
+    border-bottom: 1px solid #ff5500
 }
 
 
@@ -190,17 +200,17 @@
     margin-bottom: 10px;
     display: block;
     padding: auto 10px;
-
 }
 
 form input {
     margin: 10px;
 }
 
-.imageDiv{
+.imageDiv {
     text-align: center;
 }
-.imageDiv img{
+
+.imageDiv img {
     width: 650px;
     height: 500px;
 }
@@ -236,40 +246,41 @@ form input {
         font-size: 15px;
     }
     /*menu*/
-    .menu{
+    .menu {
         padding: 2rem;
     }
-    .menu-header{
+    .menu-header {
         display: block;
         text-align: center;
     }
-    .button{
+    .button {
         padding: 5px 10px;
         margin: auto;
     }
-    .cImg{
+    .cImg {
         height: 100px;
         width: 100px;
     }
-    .card-title{
+    .card-title {
         font-size: 20px;
     }
-    .para{
+    .para {
         font-size: 15px;
     }
-    .btns{
+    .btns {
         display: flex;
         margin: auto;
     }
-    .btnMovs{
+    .btnMovs {
         border-radius: 50px;
         margin: 7px;
     }
-    .btnMovs img{
+    .btnMovs img {
         height: 30px;
         width: 30px;
     }
-    .btn-left, .btn-right{
+    .btn-left,
+    .btn-right {
         margin: auto;
     }
     /*book table*/
@@ -297,12 +308,15 @@ form input {
     form input {
         margin: 10px;
     }
-    input, select, #msg, .req{
+    input,
+    select,
+    #msg,
+    .req {
         width: 100%;
         display: block;
         margin-left: 10px;
     }
-    .imageDiv img{
+    .imageDiv img {
         width: 100%;
         height: 400px;
     }
@@ -323,26 +337,28 @@ form input {
         display: block;
         margin: 1rem;
     }
-
     /*menu*/
-    .card-group{
+    .card-group {
         display: block;
     }
-    .menu{
+    .menu {
         padding: 1rem;
     }
-    .menu-header{
+    .menu-header {
         display: block;
         text-align: center;
     }
-    .button{
+    .button {
         padding: 5px 15px;
-     }
-    .cImg{
+    }
+    .cImg {
         height: 90px;
         width: 90px;
     }
-    input, select, #msg, .req{
+    input,
+    select,
+    #msg,
+    .req {
         width: 100%;
         display: block;
         margin-left: 10px;
@@ -427,6 +443,6 @@ form input {
     border-bottom: 4px solid orange;
 }
 
-footer{
+footer {
     background-color: #fff4f2;
 }
