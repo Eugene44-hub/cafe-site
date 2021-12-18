@@ -1,0 +1,11 @@
+#searchFoods{
+    width: 400px;
+    margin: auto;
+}
+.selected{
+    color: #ff5500;
+}
+.border-left{
+	border: none;
+	border-left: 4px solid #ff5500;
+}
