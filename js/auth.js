@@ -1,3 +1,9 @@
+// firebase auth 
+
+
+
+
+// my own server
 const form = document.querySelector("#userSignUp");
 
 form.addEventListener("submit", e => {
