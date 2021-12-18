@@ -4,9 +4,10 @@ const markupHeader = `
         <div class="container">
             <a class="navbar-brand fw-bold fs-4" href="index.html"><img src="images/logo.webp" alt=""></a>
 
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler mt-2 mt-md-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="fw-bold">MENU</span>  <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse text-center text-md-start" id="navmenu">
                 <ul class="navbar-nav fw-bold fs-5">
                     <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
@@ -34,7 +35,7 @@ const markupHeader = `
     <div class="d-flex  justify-content-end " style=" background-color: #fff4f2;">
     <div class="container d-flex justify-content-end">
     <ul class="navbar-nav fw-bold  fs-5" >
-    <li class="nav-item    p-lg-0 ">
+    <li class="nav-item p-lg-0 ">
         <div class="btn-dark border-0 nav-item fw-bold rounded-pill btn btn-light  btn-lg position-relative" style="background-color: #f86011;">
             +1023682802
             <div class="position-absolute  bg-dark rounded-pill " id="button-bg"></div>
