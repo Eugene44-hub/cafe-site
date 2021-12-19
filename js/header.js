@@ -20,7 +20,8 @@ onAuthStateChanged(auth, (user) => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        console.log(user.photoURL, user.displayName, user.email)
+        console.log(user)
+            // console.log(user.photoURL, user.displayName, user.email)
         const alpha = document.querySelectorAll("#alpha");
         for (let i = 0; i < alpha.length; i++) {
             alpha[i].innerHTML = `<span class="text-decoration-none">${user.displayName[0]}</span>`
@@ -58,12 +59,12 @@ const markupHeader = `
                     <li class="nav-item mx-lg-2  p-2 p-lg-0 hover-border">
                         <a href="contact.html" class="nav-link fw-bold text-dark">Contact</a>
                     </li>
-                    <li class="mb-2">  <a href="#" class="text-decoration-none d-lg-none"> <div class="rounded-circle text-light   ms-auto justify-content-center align-items-center d-flex" style="width:45px;height: 45px; background-color: lightpink; font-size:23px;" id="alpha"></div></a></li>
+                    <li class="mb-2">  <a href="logout.html" class="text-decoration-none d-lg-none"> <div class="rounded-circle text-light   ms-auto justify-content-center align-items-center d-flex" style="width:45px;height: 45px; background-color: lightpink; font-size:23px;" id="alpha"></div></a></li>
                 </ul>
 
             </div>
             
-      <a href="#" class="text-decoration-none d-none d-lg-block"> <div class="rounded-circle text-light  justify-content-center align-items-center d-flex" style="width:45px;height: 45px; background-color: lightpink; font-size:23px;" id="alpha"></div></a>
+      <a href="logout.html" class="text-decoration-none d-none d-lg-block"> <div class="rounded-circle text-light  justify-content-center align-items-center d-flex" style="width:45px;height: 45px; background-color: lightpink; font-size:23px;" id="alpha"></div></a>
         
             </div>
     </nav>

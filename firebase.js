@@ -17,9 +17,7 @@ const facebookBtn = document.querySelector("#fbSignIn");
 
 const auth = getAuth();
 
-const signingIn = () => {
 
-}
 
 
 googleBtn.addEventListener('click', e => {
