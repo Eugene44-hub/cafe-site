@@ -23,6 +23,7 @@ onAuthStateChanged(auth, (user) => {
         console.log(user)
             // console.log(user.photoURL, user.displayName, user.email)
         const alpha = document.querySelectorAll("#alpha");
+
         for (let i = 0; i < alpha.length; i++) {
             alpha[i].innerHTML = `<span class="text-decoration-none">${user.displayName[0]}</span>`
         } // ...
@@ -31,6 +32,20 @@ onAuthStateChanged(auth, (user) => {
         // ...
     }
 });
+
+const url = "https://cafe-db.herokuapp.com/users";
+const displayAlpha = async() => {
+    const res = await fetch(url)
+    const alpha = document.querySelectorAll("#alpha");
+
+    const user = await res.json()
+        // console.log(user)
+        // console.log(alpha[0]);
+    for (let i = 0; i < alpha.length; i++) {
+        alpha[i].innerHTML = `<span class="text-decoration-none">${user[i].name[0]}</span>`
+    }
+}
+displayAlpha()
 
 const markupHeader = `
 	<nav class="navbar navbar-light navbar-expand-lg p-4" style="z-index: 1; background-color: #fff4f2;" id="top">

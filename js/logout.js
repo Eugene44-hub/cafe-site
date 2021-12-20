@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyAKOFyOF1eFEUTLmzzfhO_7NpVXz6lMCFw",
     authDomain: "cafe-auth-536ca.firebaseapp.com",
@@ -12,6 +11,22 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+
+const url = "https://cafe-db.herokuapp.com/users";
+const fetchingDb = async() => {
+    const res = await fetch(url)
+
+    const user = await res.json()
+    console.log(user)
+    const name = document.querySelector("#name")
+    const email = document.querySelector("#email")
+    name.innerHTML = user[0].name
+    email.innerHTML = user[0].email;
+    alpha.innerHTML = `<div class="text-decoration-none fw-bold  bg-primary rounded-circle d-flex justify-content-center align-items-center text-light" style="height:100px ;width:100px; font-size:70px" >${user[0].name[0]}</div>`
+
+}
+
+fetchingDb()
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -24,7 +39,6 @@ onAuthStateChanged(auth, (user) => {
         name.textContent = user.displayName
         email.textContent = user.email
             // console.log(user.photoURL, user.displayName, user.email)
-        const alpha = document.querySelector("#alpha");
         alpha.innerHTML = `<div class="text-decoration-none fw-bold  bg-primary rounded-circle d-flex justify-content-center align-items-center text-light" style="height:100px ;width:100px; font-size:70px" >${user.displayName[0]}</div>`
 
         // for (let i = 0; i < alpha.length; i++) {
